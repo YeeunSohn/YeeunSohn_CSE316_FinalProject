@@ -1,0 +1,220 @@
+.Panel{
+        width: 400px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -200px;
+
+        position: absolute;
+        background-color: rgba(248, 23, 143, 0.808);
+
+}
+.BigPanel{
+    width: 1000px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -500px;
+
+    position: absolute;
+    background-color: rgba(230, 230, 230, 0.918);
+}
+.LoginTitle
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.loginbar
+{
+    float: center;
+    margin-left: 30px;
+    margin-top: 30px;
+    
+}
+.loginButton
+{
+    margin-left: 120px;
+}
+.LabtechButton
+{
+    width: 300px;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+.loginButtonO
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    font-size: 8px;
+}
+.left
+{
+    text-align: center;
+    float: left;
+    width: 500px;
+    height: 700px;
+
+}
+.MAP_Barcode
+{
+    margin-left: 10%;
+    width: 400px;
+    margin-bottom: 20px;
+
+}
+.poolmaptable1
+{
+
+    margin-left: 5px;
+    border-style: double;
+    border-collapse: collapse;
+}
+.poolmaptable1 th
+{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.poolmaptable1 td
+{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.poolmaptable2
+{
+    margin-left: px;
+    border: 3px solid black;
+    border-style: double;
+    border-collapse: collapse;
+}
+.poolmaptable2 th
+{
+    font-size: 11px;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+.poolmaptable2 td
+{
+    text-align: center;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+.Invisible{
+    text-align: center;
+    clear: none;
+    width: 100px;
+    border: 0px none;
+    float: none;
+    
+    background-color: transparent;
+}
+.pm_res_Panel
+{
+    overflow:auto;
+    margin-left: 50px;
+    width: 400px;
+    height: 450px;
+    background-color: rgb(187, 186, 186);
+}
+.title{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+.right
+{
+    float:right;
+    width: 500px;
+    height: 700px;
+    background-color: rgb(192, 192, 192);
+}
+.testlist
+{
+    overflow:auto;
+    margin-top: 25px;
+    height: 600px;
+    margin-left: 25px;
+    width: 450px;
+    background-color: rgb(226, 47, 137);
+}
+button{
+background:#1AAB8A;
+color:#fff;
+border:none;
+position:relative;
+height:60px;
+font-size:1.6em;
+padding:0 2em;
+cursor:pointer;
+transition:800ms ease all;
+outline:none;
+}
+button:hover{
+background:#fff;
+color:#1AAB8A;
+}
+button:before,button:after{
+content:'';
+position:absolute;
+top:0;
+right:0;
+height:2px;
+width:0;
+background: #1AAB8A;
+transition:400ms ease all;
+}
+button:after{
+right:inherit;
+top:inherit;
+left:0;
+bottom:0;
+}
+button:hover:before,button:hover:after{
+width:100%;
+transition:800ms ease all;
+}
+.Panel2{
+    width: 400px;
+    height: 200px;
+    top: 100px;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    position: relative;
+
+    background-color: rgba(155, 150, 152, 0.808);
+}
+.testTable{
+    top: 200px;
+    width: 100%;
+    position: relative;
+}
+.collectionTable{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid black;
+}
+.collectionTable th{
+    border: 4px solid black;
+}
+.collectionTable td{
+    border: 4px solid black;
+}
+.testbar
+{
+    float: center;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.addButton{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    font-size: 8px;
+}

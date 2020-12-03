@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="BasicStyle.css">
+    </head>
+    <body style="background-image:url(PoolMapping.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div class="BigPanel">
+        <form method="POST">
+            <div class="left" name="ABC">
+                <div class="title"><b>Pool Mapping</b></div>
+                    <div class="MAP_Barcode"><b style="">Pool Barcode</b><input type="text" name="PoolBarcode" style="margin-left: 50px;" value= <%= set %> ></input></div>
+                    <div class="MAP_Barcode"><b style="">Test Barcodes</b></div>
+                    <div class="pm_res_Panel">
+                        <table class="poolmaptable1" id="PM_T1">
+                            <tr>
+                                <th style="width: 280px;">ID</th>
+                                <th style="width: 100px;"></th>
+                              </tr>
+                              <% data.forEach(function (item, index) { %>
+                              <tr>
+                                <td><input type="text" class="Invisible" name="BList" value= <%= item.testBarcode %> readonly></input></td>
+                                <td><button style="height: 30px; font-size: 12px; width: 100px;"  class="btn_delete">Delete</button></td>
+                              </tr>
+                              <% }); %>
+                        </table>
+                    </div>
+                    <button style="margin-top: 20px;width: 200px;height: 40px;" formaction="/PoolSubmit">Submit</button>
+                    <button style="margin-top: 20px;width: 200px;height: 40px;" formaction="/PoolMapping">Reload</button>
+            </form>
+
+            </div>
+            <div class="right">
+                <form method="post">
+                <div class="testlist">
+  
+                        <table class="poolmaptable2" id="PM_T1">
+                            <tr>
+                                <th style="width: 100px"></th>
+                                <th style="width: 100px;">ID</th>
+                                <th style="width: 270px;"></th>
+                              </tr>
+                              <% data2.forEach(function (item, index) { %>
+                              <tr>
+                                <td><input type="checkbox" class="Invisible" name="CHEK" value= <%= item.pol %>></input></td>
+                                <td><input type="text" class="Invisible" name="PB" value= <%= item.pol %> readonly></input></td>
+                                <td><input type="text" style="width:200px" class="Invisible" name="BList" value= <%= item.tes %> readonly></input></td>
+                              </tr>
+                              <% }); %>
+                        </table>
+                </div>    
+                <button style="margin-top: 27px; margin-left:40px; width: 200px;height: 40px;" formaction="/PoolSubmit/Edit">Edit</button>
+                <button style="margin-top: 27px;width: 200px;height: 40px;" formaction="/PoolMapping/Delete">Delete</button>                 
+                </form>
+            </div>
+        </div>
+        <script>
+        var eventTarget = document.getElementsByClassName('btn_delete')
+        for (var i=0; i<eventTarget.length; i++) {
+                eventTarget[i].addEventListener('click', function() {
+                var parent = document.querySelector('#PM_T1 tbody')
+                parent.removeChild(this.parentElement.parentElement)
+                i --
+                })
+                }
+        </script>
+    </body>
+
+</html>

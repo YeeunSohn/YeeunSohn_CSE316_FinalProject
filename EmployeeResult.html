@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="BasicStyle.css">
+    </head>
+    <body style="background-image:url(PoolMapping.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div class="BigPanel">
+            <div class="left" name="ABC">
+                <div class="title"><b>Test Result</b></div>
+                <form>
+                    <label style="font-size: 25px;"><b>Employee ID</b></label>
+                    <input type="text" style="margin-left: 20px;margin-top: 170px;" value=<%= lgID %> readonly/>
+                </form>
+
+            </div>
+            <div class="right">
+                <form method="post">
+                <div class="testlist">
+  
+                        <table class="poolmaptable2" id="PM_T1">
+                            <tr>
+                                <th style="widows: 40px">Test Barcode</th>
+                                <th style="width: 180px;">Result</th>
+                                <th style="width: 250px;">Collection DATE</th>
+                              </tr>
+                            <% data.forEach(function (item, index) { %>
+                              <tr>
+                                <td><input type="text" class="Invisible" name="PB" value= <%= item.tb %> readonly></input></td>
+                                <td><input type="text" class="Invisible" name="PB" value= <%= item.result %> readonly></input></td>
+                                <td><input type="text" style="width:200px" class="Invisible" name="BList" value= <%= item.time  %> readonly></input></td>
+                              </tr>
+                              <% }); %>
+                        </table>
+                </div>                   
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>

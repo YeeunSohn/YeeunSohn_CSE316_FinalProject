@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="BasicStyle.css">
+    </head>
+    <body style="background-image:url(Poolmapp.gif);background-repeat: no-repeat;background-size: cover;">
+        <div class="BigPanel">
+        <form method="POST">
+            <div class="left" name="ABC">
+                <div class="title" style="margin-bottom: 150px;"><b></b></div>
+                    <div class="MAP_Barcode"><b style="">Well Barcode</b><input type="text" name="WellBarcode" style="margin-left: 50px;" value= <%= well %>></input></div>
+                    <div class="MAP_Barcode"><b style="">Pool Barcode</b><input type="text" name="PoolBarcode" style="margin-left: 50px;" value= <%= pool %>></input></div>
+                    <b>Result</b>
+                    <SELECT NAME=sltSample SIZE=1 style="width: 160px;margin-left: 90px;">
+                        <OPTION VALUE=1 selected>IN Progress</OPTION>
+                        <OPTION VALUE=2>Positive</OPTION>
+                        <OPTION VALUE=3>Negative</OPTION>
+                    </SELECT>
+                    <button style="margin-top: 314px; margin-left:40px; width: 200px;height: 40px;" formaction="/WellTesting/Submit">Submit</button>
+                </div>
+
+            </form>
+
+            <div class="right">
+                <form method="post">
+                <div class="testlist">
+  
+                        <table class="poolmaptable2" id="PM_T1">
+                            <tr>
+                                <th style="width: 20px">Pool Barcode</th>
+                                <th style="width: 150px">Pool Barcode</th>
+                                <th style="width: 170px;">Well Barcode</th>
+                                <th style="width: 150px;">Result</th>
+                              </tr>
+                              <% data.forEach(function (item, index) { %>
+                                <tr>
+                                  <td><input type="checkbox" class="Invisible" name="CHEK" value= <%= index %>></input></td>
+                                  <td><input type="text" class="Invisible" name="pool" value= <%= item.poolBarcode %> readonly></input></td>
+                                  <td><input type="text" class="Invisible" name="well" value= <%= item.wellBarcode %> readonly></input></td>
+                                  <td><input type="text" class="Invisible" name="resu" value= <%=item.result%> readonly></input></td>
+                                </tr>
+                                <% }); %>
+                        </table>
+                </div>    
+                <button style="margin-top: 27px; margin-left:40px; width: 200px;height: 40px;" formaction="/WellTesting/Edit">Edit</button>
+                <button style="margin-top: 27px;width: 200px;height: 40px;" formaction="/WellTesting/Delete">Delete</button>                 
+                </form>
+            </div>
+        </div>
+        <script>
+        var eventTarget = document.getElementsByClassName('btn_delete')
+        for (var i=0; i<eventTarget.length; i++) {
+                eventTarget[i].addEventListener('click', function() {
+                var parent = document.querySelector('#PM_T1 tbody')
+                parent.removeChild(this.parentElement.parentElement)
+                i --
+                })
+                }
+        </script>
+    </body>
+
+</html>

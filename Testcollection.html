@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="BasicStyle.css">
+    </head>
+    <body style="background-image:url(Testcollection.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div class="Panel2">
+            <h1 class="LoginTitle">Test Collection</h1>
+            <form method="post">
+            <div class="testbar"><b style="margin-right: 13px;">Employee ID: </b><input type="text" name="employeeID" /></input></div>
+            <div class="testbar"><b style="margin-right: 10px;">Test barcode: </b><input type="text" name="testBarcode" /></input></div>
+            <div class="loginButton">
+                <button class="loginButtonO" style="float: center;" formaction="/TestCollection/submit">Add</button>
+                </div>
+            </form>
+        </div>
+        <form method="post">
+        <div class="testTable">
+            <table class="collectionTable">
+                <tr>
+                    <th style="width:30px;">Employee ID</th>
+                    <th style="width:30px;">Test Barcode</th>
+                    <th style="width:30px;">DELETE</th>
+                </tr>
+                <% data.forEach(function(item, index) { %>
+                    <tr>
+                        <td><input type="text" class="Invisible" name="employeeID" value= <%= item.employeeID %>></input></td> 
+                        <td><input type="text" class="Invisible" name="testBarcode" value= <%= item.testBarcode %>></input></td> 
+                        <td><button class="loginButtonO" style="width:120px; height:30px; margin-top: -18px; margin-left: -1px;" formaction="/TestCollection/delete" name= <%= item.testBarcode %> value= <%= index %>>DELETE</button></td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+        </form>
+    </body>
+</html>
